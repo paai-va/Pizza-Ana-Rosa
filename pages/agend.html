@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/agend.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <title>Agendamento</title>
+</head>
+<body>
+    <main class="agendamento-container">
+        <section class="reserva">
+            <h2>Reserve sua mesa</h2>
+
+    <div class="linha">
+        <div class="campo">
+            <label>Nome Completo *</label>
+            <input type="text" placeholder="Seu nome">
+        </div>
+
+        <div class="campo">
+            <label>Telefone *</label>
+            <input type="text" placeholder="Seu telefone">
+         </div>
+    </div>
+
+        <div class="campo">
+                <label>Email *</label>
+                <input type="email" placeholder="seu@email.com">
+        </div>
+        
+        <div class="linha">
+            <div class="campo">
+                <label>Data *</label>
+                <input type="text" id="dataReserva" placeholder="Selecione uma data" readonly>
+        </div>
+
+        <div class="campo">
+          <label>Horário *</label>
+          <select id="horarioReserva">
+            <option value="" selected disabled>Selecione um horario</option>
+            <option>18:30</option>
+            <option>19:00</option>
+            <option>19:30</option>
+            <option>20:00</option>
+            <option>20:30</option>
+            <option>21:00</option>
+            <option>21:30</option>
+            <option>22:00</option>
+            <option>22:30</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label>Pessoas *</label>
+          <select id="pessoasReserva">
+            <option value="" selected disabled>Quantas pessoas</option>
+            <option>1 pessoa</option>
+            <option>2 pessoas</option>
+            <option>3 pessoas</option>
+            <option>4 pessoas</option>
+            <option>5 pessoas</option>
+            <option>6 pessoas</option>
+            <option>7 pessoas</option>
+            <option>8 pessoas</option>
+            <option>9 pessoas</option>
+            <option>10 ou mais</option>
+          </select>
+        </div>
+      </div>
+    <div class="campo">
+        <label>Observações</label>
+        <textarea placeholder="Alguma observação?"></textarea>
+    </div>
+    </section>
+  </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="../js/agend.js"></script>
+</body>
+</html>
