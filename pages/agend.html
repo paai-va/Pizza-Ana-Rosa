@@ -4,41 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/agend.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <title>Agendamento</title>
 </head>
 <body>
-    <main class="agendamento-container">
-        <section class="reserva">
-            <h2>Reserve sua mesa</h2>
+<header>
+  <div class="topbar">
+    <div class="topbar-social">
+      <a href="https://www.instagram.com/pizzariaanarosaoficial/" target="_blank">
+        <i class="fa-brands fa-instagram"></i>
+        @pizzariaanarosaoficial
+      </a>
 
-    <div class="linha">
-        <div class="campo">
-            <label>Nome Completo *</label>
-            <input type="text" placeholder="Seu nome">
-        </div>
-
-        <div class="campo">
-            <label>Telefone *</label>
-            <input type="text" placeholder="Seu telefone">
-         </div>
+      <a href="https://www.facebook.com/pizzariaanarosa18/" target="_blank">
+        <i class="fa-brands fa-facebook"></i>
+        Facebook.com/pizzariaanarosa18
+      </a>
     </div>
 
+    <div class="topbar-actions">
+      <a href="#" class="btn-top btn-reserva-top">Reservar Rodízio</a>
+      <a href="#" class="btn-top btn-pedido-top">Fazer Pedido</a>
+    </div>
+  </div>
+
+  <div class="navbar-principal">
+    <div class="logo">
+      <a href="index.html">
+        <img src="../assets/images/LogoAnaRosa.svg" alt="Logo da Pizzaria Ana Rosa">
+      </a>
+    </div>
+
+    <nav class="menu">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Cardápio</a>
+      <a href="promocoes.html">Promoções</a>
+      <a href="agend.html" class="ativo">Agendamento</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </div>
+</header>
+
+   <!-- Área principal da página -->
+  <main class="agendamento-container">
+    <!-- Caixa do formulário -->
+    <section class="reserva">
+      <h2>Reserve sua mesa</h2>
+
+      <!-- Primeira linha: nome e telefone -->
+      <div class="linha">
         <div class="campo">
-                <label>Email *</label>
-                <input type="email" placeholder="seu@email.com">
+          <label>Nome Completo *</label>
+          <input type="text" placeholder="Seu nome">
         </div>
-        
-        <div class="linha">
-            <div class="campo">
-                <label>Data *</label>
-                <input type="text" id="dataReserva" placeholder="Selecione uma data" readonly>
+
+        <div class="campo">
+          <label>Telefone *</label>
+          <input type="text" placeholder="Seu telefone">
+        </div>
+      </div>
+
+      <!-- Campo de email ocupando a largura disponível -->
+      <div class="campo">
+        <label>Email *</label>
+        <input type="email" placeholder="seu@email.com">
+      </div>
+
+      <!-- Linha com data, horário e quantidade de pessoas -->
+      <div class="linha">
+        <div class="campo">
+          <label>Data *</label>
+          <input type="text" id="dataReserva" placeholder="Selecione uma data" readonly>
+          <small id="erroData" class="erro-data"></small>
         </div>
 
         <div class="campo">
           <label>Horário *</label>
           <select id="horarioReserva">
-            <option value="" selected disabled>Selecione um horario</option>
+            <option value="" selected disabled>Selecione um horário</option>
+            <option>17:30</option>
+            <option>18:00</option>
             <option>18:30</option>
             <option>19:00</option>
             <option>19:30</option>
@@ -68,14 +115,23 @@
           </select>
         </div>
       </div>
-    <div class="campo">
+
+      <!-- Observações-->
+      <div class="campo">
         <label>Observações</label>
         <textarea placeholder="Alguma observação?"></textarea>
-    </div>
+      </div>
+
+      <!-- Botão para Confirmar -->
+      <div class="campo">
+        <button class="btnReserva">Confirmar Reserva</button>
+      </div>
     </section>
   </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <script src="../js/agend.js"></script>
+  <!-- Script da biblioteca do calendário -->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <!-- JavaScript da página -->
+  <script src="../js/agend.js"></script>
 </body>
 </html>

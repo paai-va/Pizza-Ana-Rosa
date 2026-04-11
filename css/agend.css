@@ -1,14 +1,20 @@
+/* Reset básico:
+   remove margens e espaçamentos padrão do navegador
+   e melhora o controle do tamanho dos elementos */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Estilo geral da página */
 body {
   background-color: #f3f3f3;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
+/* Container principal:
+   centraliza a caixa do formulário no meio da tela */
 .agendamento-container {
   min-height: 100vh;
   display: flex;
@@ -17,6 +23,7 @@ body {
   padding: 40px 20px;
 }
 
+/* Caixa branca do formulário */
 .reserva {
   width: 100%;
   max-width: 700px;
@@ -26,18 +33,24 @@ body {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
+/* Título principal do formulário */
 .reserva h2 {
   font-size: 32px;
   color: #222;
   text-align: center;
+  margin-bottom: 30px;
+  font-weight: 600;
 }
 
+/* Linha usada para colocar campos lado a lado */
 .linha {
   display: flex;
   gap: 20px;
   margin-top: 20px;
 }
 
+/* Estrutura padrão de cada campo:
+   label em cima, input/select/textarea embaixo */
 .campo {
   flex: 1;
   display: flex;
@@ -45,12 +58,15 @@ body {
   margin-top: 20px;
 }
 
+/* Texto acima dos campos */
 .campo label {
   margin-bottom: 6px;
-  font-size: 14px;
-  color: #444;
+  font-size: 13px;
+  color: #666;
+  font-weight: 500;
 }
 
+/* Estilo padrão dos inputs e selects */
 .campo input,
 .campo select {
   padding: 12px;
@@ -61,23 +77,26 @@ body {
   width: 100%;
 }
 
+/* Efeito visual quando o usuário clica no campo */
 .campo input:focus,
 .campo select:focus {
-    border: 1px solid #999;
+  border: 1px solid #999;
 }
 
+/* Mensagem de erro da data */
 .erro-data {
   color: #d11a2a;
   font-size: 13px;
   margin-top: 6px;
 }
 
+/* Caixa de observações */
 .campo textarea {
   padding: 16px;
   border-radius: 14px;
   border: 1px solid #ddd;
   font-size: 14px;
-  resize: none;
+  resize: none; /* impede o usuário de redimensionar manualmente */
   height: 160px;
   width: 100%;
   font-family: inherit;
@@ -85,7 +104,137 @@ body {
   transition: 0.2s;
 }
 
+/* Destaque ao clicar na área de observações */
 .campo textarea:focus {
   border: 1px solid #000;
-  box-shadow: 0 0 0 2px rgba(0,0,0,0.05);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Botão principal de confirmar reserva */
+.btnReserva {
+  width: 100%;
+  padding: 14px;
+  background-color: #f2d9bb;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s ease;
+  color: #313131;
+}
+
+/* Efeito ao passar o mouse no botão */
+.btnReserva:hover {
+  background-color: #ff0015;
+  color: white;
+  transform: scale(1.03);
+}
+
+/* BLOCO TODO DO TOPO */
+header {
+  width: 100%;
+}
+
+/* BARRA DE CIMA */
+.topbar {
+  background-color: #ff0000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+}
+
+.topbar-social i {
+  font-size: 18px;
+}
+ 
+.topbar-social {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.fa-instagram {
+  color: yellow;
+   background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.fa-facebook {
+  color: #1877F2;
+}
+.topbar-social a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.topbar-social a:hover {
+  transform: translateY(-1px);
+}
+.topbar-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-top {
+  text-decoration: none;
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.btn-reserva-top {
+  background-color: #e6d1b1;
+  color: #222;
+}
+
+.btn-pedido-top {
+  background-color: #1dbb12;
+  color: white;
+}
+
+/* BARRA DE BAIXO */
+.navbar-principal {
+  background-color: #ead5b7;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 40px;
+}
+
+.logo img {
+  height: 60px;
+  width: auto;
+  display: block;
+}
+
+.menu {
+  display: flex;
+  gap: 30px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #222;
+  font-size: 15px;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.menu a:hover {
+  color: #c40000;
+}
+
+.menu .ativo {
+  color: #c40000;
+  font-weight: 700;
 }
