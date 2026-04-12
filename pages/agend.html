@@ -1,137 +1,210 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/agend.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/agend.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
     <title>Agendamento</title>
-</head>
-<body>
-<header>
-  <div class="topbar">
-    <div class="topbar-social">
-      <a href="https://www.instagram.com/pizzariaanarosaoficial/" target="_blank">
-        <i class="fa-brands fa-instagram"></i>
-        @pizzariaanarosaoficial
-      </a>
+  </head>
+  <div>
+    <header>
+      <div class="topbar">
+        <div class="topbar-social">
+          <a
+            href="https://www.instagram.com/pizzariaanarosaoficial/"
+            target="_blank"
+          >
+            <i class="fa-brands fa-instagram"></i>
+            @pizzariaanarosaoficial
+          </a>
 
-      <a href="https://www.facebook.com/pizzariaanarosa18/" target="_blank">
-        <i class="fa-brands fa-facebook"></i>
-        Facebook.com/pizzariaanarosa18
-      </a>
+          <a href="https://www.facebook.com/pizzariaanarosa18/" target="_blank">
+            <i class="fa-brands fa-facebook"></i>
+            Facebook.com/pizzariaanarosa18
+          </a>
+        </div>
+
+        <div class="topbar-actions">
+          <a href="#" class="btn-top btn-reserva-top">Reservar Rodízio</a>
+          <a href="#" class="btn-top btn-pedido-top">Fazer Pedido</a>
+        </div>
+      </div>
+
+      <div class="navbar-principal">
+        <div>
+          <a href="index.html" class="logo">
+          <h1>𝓟𝓲𝔃𝔃𝓪𝓻𝓲𝓪 𝓐𝓷𝓪 𝓡𝓸𝓼𝓪</h1>
+          <span>RODÍZIO & DELIVERY</span>
+          </a>
+        </div>
+
+        <nav class="menu">
+          <a href="index.html">Home</a>
+          <a href="menu.html">Cardápio</a>
+          <a href="promocoes.html">Promoções</a>
+          <a href="agend.html" class="ativo">Agendamento</a>
+          <a href="contato.html">Contato</a>
+        </nav>
+      </div>
+    </header>
+
+      <div class="titulo">
+        <h1>Reserve sua mesa</h1>
+        <p>Preencha as informações abaixo para reservar sua mesa na Pizzaria Ana Rosa</p>  
+      </div>
+
+    <div class="whatsapp-box">
+      <div class="whatsapp-info">
+        <i class="fa-brands fa-whatsapp"></i>
+
+      <div>
+        <h3>Prefere agendar pelo WhatsApp?</h3>
+        <p>Fale diretamente com nossa equipe e faça sua reserva de forma rápida e prática!</p>
+      </div>
     </div>
 
-    <div class="topbar-actions">
-      <a href="#" class="btn-top btn-reserva-top">Reservar Rodízio</a>
-      <a href="#" class="btn-top btn-pedido-top">Fazer Pedido</a>
-    </div>
+    <a href="https://wa.me/5515992407097" target="_blank" class="btn-whatsapp">
+      <i class="fa-brands fa-whatsapp"></i>
+      Agendar pelo WhatsApp
+    </a>
   </div>
 
-  <div class="navbar-principal">
-    <div class="logo">
-      <a href="index.html">
-        <img src="../assets/images/LogoAnaRosa.svg" alt="Logo da Pizzaria Ana Rosa">
-      </a>
+  <div class="divider">
+    <span>Ou preencha o formulário abaixo</span>
+  </div>
+
+
+    <!-- Área principal da página -->
+    <main class="agendamento-container">
+      <!-- Caixa do formulário -->
+      <section class="reserva">
+
+        <!-- Primeira linha: nome e telefone -->
+        <div class="linha">
+          <div class="campo">
+            <label>Nome Completo *</label>
+            <input type="text" id="nomeReserva" placeholder="Seu nome" />
+          </div>
+
+          <div class="campo">
+            <label>Telefone *</label>
+            <input type="text" id="telefoneReserva" placeholder="Seu telefone" />
+          </div>
+        </div>
+
+        <!-- Campo de email ocupando a largura disponível -->
+        <div class="campo">
+          <label>Email *</label>
+          <input type="email" id="emailReserva" placeholder="seu@email.com" />
+        </div>
+
+        <!-- Linha com data, horário e quantidade de pessoas -->
+        <div class="linha">
+          <div class="campo">
+            <label>Data *</label>
+            <input
+              type="text"
+              id="dataReserva"
+              placeholder="Selecione uma data"
+              readonly
+            />
+            <small id="erroData" class="erro-data"></small>
+          </div>
+
+          <div class="campo">
+            <label>Horário *</label>
+            <select id="horarioReserva">
+              <option value="" selected disabled>Selecione um horário</option>
+              <option>17:30</option>
+              <option>18:00</option>
+              <option>18:30</option>
+              <option>19:00</option>
+              <option>19:30</option>
+              <option>20:00</option>
+              <option>20:30</option>
+              <option>21:00</option>
+              <option>21:30</option>
+              <option>22:00</option>
+              <option>22:30</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <label>Pessoas *</label>
+            <select id="pessoasReserva">
+              <option value="" selected disabled>Quantas pessoas</option>
+              <option>1 pessoa</option>
+              <option>2 pessoas</option>
+              <option>3 pessoas</option>
+              <option>4 pessoas</option>
+              <option>5 pessoas</option>
+              <option>6 pessoas</option>
+              <option>7 pessoas</option>
+              <option>8 pessoas</option>
+              <option>9 pessoas</option>
+              <option>10 ou mais</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Observações-->
+        <div class="campo">
+          <label>Observações</label>
+          <textarea id="observacoes" placeholder="Alguma observação?"></textarea>
+        </div>
+
+        <!-- Botão para Confirmar -->
+        <div class="campo">
+          <button id="btnReserva" class="btnReserva">Confirmar Reserva</button>
+        </div>
+      </section>
+    </main>
+
+<footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-col">
+      <h3>Pizzaria Ana Rosa</h3>
+      <p>Rodízio & Delivery</p>
+      <p>Sabor, tradição e qualidade para sua família.</p>
     </div>
 
-    <nav class="menu">
-      <a href="index.html">Home</a>
-      <a href="menu.html">Cardápio</a>
-      <a href="promocoes.html">Promoções</a>
-      <a href="agend.html" class="ativo">Agendamento</a>
-      <a href="contato.html">Contato</a>
-    </nav>
+    <div class="footer-col">
+      <h3>Contato</h3>
+      <p>WhatsApp: (15) 3326-5048</p>
+      <p>Endereço: Av. Elias Maluf, 2013 - Wanel Ville, Sorocaba - SP, 18055-215</p>
+      <p>Instagram: @pizzariaanarosaoficial</p>
+    </div>
+
+    <div class="footer-col">
+      <h3>Horário de funcionamento</h3>
+      <p>Segunda a quinta: 18:30 às 23:30</p>
+      <p>Sexta e sábado: 18:30 às 00:00</p>
+      <p>Domingo: 18:30 às 23:30</p>
+    </div>
+
   </div>
-</header>
 
-   <!-- Área principal da página -->
-  <main class="agendamento-container">
-    <!-- Caixa do formulário -->
-    <section class="reserva">
-      <h2>Reserve sua mesa</h2>
+  <div class="footer-bottom">
+    <p>© 2026 Pizzaria Ana Rosa. Todos os direitos reservados.</p>
+  </div>
+</footer>
 
-      <!-- Primeira linha: nome e telefone -->
-      <div class="linha">
-        <div class="campo">
-          <label>Nome Completo *</label>
-          <input type="text" placeholder="Seu nome">
-        </div>
-
-        <div class="campo">
-          <label>Telefone *</label>
-          <input type="text" placeholder="Seu telefone">
-        </div>
-      </div>
-
-      <!-- Campo de email ocupando a largura disponível -->
-      <div class="campo">
-        <label>Email *</label>
-        <input type="email" placeholder="seu@email.com">
-      </div>
-
-      <!-- Linha com data, horário e quantidade de pessoas -->
-      <div class="linha">
-        <div class="campo">
-          <label>Data *</label>
-          <input type="text" id="dataReserva" placeholder="Selecione uma data" readonly>
-          <small id="erroData" class="erro-data"></small>
-        </div>
-
-        <div class="campo">
-          <label>Horário *</label>
-          <select id="horarioReserva">
-            <option value="" selected disabled>Selecione um horário</option>
-            <option>17:30</option>
-            <option>18:00</option>
-            <option>18:30</option>
-            <option>19:00</option>
-            <option>19:30</option>
-            <option>20:00</option>
-            <option>20:30</option>
-            <option>21:00</option>
-            <option>21:30</option>
-            <option>22:00</option>
-            <option>22:30</option>
-          </select>
-        </div>
-
-        <div class="campo">
-          <label>Pessoas *</label>
-          <select id="pessoasReserva">
-            <option value="" selected disabled>Quantas pessoas</option>
-            <option>1 pessoa</option>
-            <option>2 pessoas</option>
-            <option>3 pessoas</option>
-            <option>4 pessoas</option>
-            <option>5 pessoas</option>
-            <option>6 pessoas</option>
-            <option>7 pessoas</option>
-            <option>8 pessoas</option>
-            <option>9 pessoas</option>
-            <option>10 ou mais</option>
-          </select>
-        </div>
-      </div>
-
-      <!-- Observações-->
-      <div class="campo">
-        <label>Observações</label>
-        <textarea placeholder="Alguma observação?"></textarea>
-      </div>
-
-      <!-- Botão para Confirmar -->
-      <div class="campo">
-        <button class="btnReserva">Confirmar Reserva</button>
-      </div>
-    </section>
-  </main>
-
-  <!-- Script da biblioteca do calendário -->
-  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-  <!-- JavaScript da página -->
-  <script src="../js/agend.js"></script>
-</body>
+    <!-- Script da biblioteca do calendário -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <!-- JavaScript da página -->
+    <script src="../js/agend.js"></script>
+  </body>
 </html>

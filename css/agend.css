@@ -10,17 +10,45 @@
 /* Estilo geral da página */
 body {
   background-color: #f3f3f3;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 /* Container principal:
    centraliza a caixa do formulário no meio da tela */
 .agendamento-container {
-  min-height: 100vh;
+  min-height: auto;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  padding: 40px 20px;
+  padding: 10px 20px;
+  flex-direction: column;
+}
+
+.titulo {
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 25px;
+}
+
+.titulo::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #ff1100;
+  margin: 20px auto 0;
+}
+
+.titulo h1 {
+  font-size: 36px;
+  color: #222;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.titulo p {
+  font-size: 16px;
+  color: #666;
 }
 
 /* Caixa branca do formulário */
@@ -30,9 +58,15 @@ body {
   background-color: #ffffff;
   border-radius: 16px;
   padding: 40px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-shadow:
+   0 50px 70px rgba(0, 0, 0, 0.08),
+   0 5px 15px rgba(0, 0, 0, 0.04);
 }
 
+.reserva:hover {
+  transform: translateY(-3px);
+  transition: 0.2s;
+}
 /* Título principal do formulário */
 .reserva h2 {
   font-size: 32px;
@@ -135,6 +169,9 @@ body {
 /* BLOCO TODO DO TOPO */
 header {
   width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 /* BARRA DE CIMA */
@@ -149,7 +186,7 @@ header {
 .topbar-social i {
   font-size: 18px;
 }
- 
+
 .topbar-social {
   display: flex;
   align-items: center;
@@ -158,13 +195,22 @@ header {
 
 .fa-instagram {
   color: yellow;
-   background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+  background: linear-gradient(
+    45deg,
+    #feda75,
+    #fa7e1e,
+    #d62976,
+    #962fbf,
+    #4f5bd5
+  );
+
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .fa-facebook {
-  color: #1877F2;
+  color: #1877f2;
 }
 .topbar-social a {
   display: flex;
@@ -211,10 +257,49 @@ header {
   padding: 14px 40px;
 }
 
-.logo img {
-  height: 60px;
-  width: auto;
-  display: block;
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 40px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo h1 {
+  font-size: 28px;
+  color: #222;
+  margin: 0;
+  line-height: 1;
+  font-weight: normal;
+}
+
+.logo span {
+  font-size: 16px;
+  letter-spacing: 2px;
+  color: #444;
+  margin-top: 8px;
+  text-align: center;
+  position: relative;
+}
+
+.logo span::before,
+.logo span::after {
+  content: "";
+  width: 40px;
+  height: 1px;
+  background-color: #444;
+  position: absolute;
+  top: 50%;
+  display: none;
+}
+
+.logo span::before {
+  left: -50px;
+}
+
+.logo span::after {
+  right: -50px;
 }
 
 .menu {
@@ -228,13 +313,162 @@ header {
   font-size: 15px;
   font-weight: 500;
   transition: 0.2s;
+  position: relative;
+}
+
+.menu a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 0%;
+  height: 4px;
+  background-color: #c40000;
+  border-radius: 10px;
+  transform: translateX(-50%);
+  transition: 0.3s;
 }
 
 .menu a:hover {
-  color: #c40000;
+  color: #ff0000;
+}
+
+.menu a:hover::after {
+  width: 60%;
+}
+
+.menu .ativo::after {
+  width: 60%;
 }
 
 .menu .ativo {
-  color: #c40000;
+  color: #ff0000;
   font-weight: 700;
+}
+
+/* BOX WHATSAPP */
+.whatsapp-box {
+  background: #0d3b2e;
+  border: 1px solid #1db954;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 700px;
+  margin: 0 auto 20px;
+}
+
+/* TEXTO */
+.whatsapp-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #fff;
+}
+
+.whatsapp-info i {
+  font-size: 28px;
+  color: #1db954;
+}
+
+.whatsapp-info h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.whatsapp-info p {
+  margin: 0;
+  font-size: 13px;
+  color: #ccc;
+}
+
+/* BOTÃO */
+.btn-whatsapp {
+  background: #1db954;
+  color: #fff;
+  text-decoration: none;
+
+  padding: 12px 20px;
+  border-radius: 8px;
+
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  transition: 0.2s;
+}
+
+.btn-whatsapp:hover {
+  background: #17a74a;
+  transform: scale(1.05);
+}
+
+/* DIVIDER */
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px;
+  margin: 10px auto 20px;
+}
+
+.divider span {
+  padding: 0 10px;
+  color: #777;
+  font-size: 13px;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #ddd;
+}
+
+.footer {
+  background-color: #111;
+  color: #fff;
+  padding: 50px 40px 20px;
+  margin-top: 60px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 220px;
+}
+
+.footer-col h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #ead5b7;
+}
+
+.footer-col p {
+  font-size: 14px;
+  color: #ccc;
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.footer-bottom {
+  border-top: 1px solid #333;
+  margin-top: 30px;
+  padding-top: 15px;
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 13px;
+  color: #888;
 }
