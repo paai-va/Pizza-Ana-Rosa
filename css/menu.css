@@ -1,0 +1,121 @@
+/* Reset básico:
+   remove margens e espaçamentos padrão do navegador
+   e melhora o controle do tamanho dos elementos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo geral da página */
+body {
+  background-color: #f3f3f3;
+  font-family: "Poppins", sans-serif;
+}
+
+/* HEADER */
+header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.topbar {
+  background-color: #020202;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+}
+
+.topbar-social {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.topbar-social a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.topbar-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-top {
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.btn-reserva-top {
+  background-color: #e6d1b1;
+  color: #222;
+}
+
+.btn-pedido-top {
+  background-color: #1dbb12;
+  color: white;
+}
+
+.navbar-principal {
+  background-color: #ead5b7;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 40px;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.menu {
+  display: flex;
+  gap: 30px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #222;
+}
+
+/* FOOTER */
+.footer {
+  background-color: #111;
+  color: #fff;
+  padding: 50px 40px 20px;
+  margin-top: 60px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 220px;
+}
+
+.footer-bottom {
+  border-top: 1px solid #333;
+  margin-top: 30px;
+  padding-top: 15px;
+  text-align: center;
+}

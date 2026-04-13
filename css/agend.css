@@ -35,7 +35,7 @@ body {
   display: block;
   width: 60px;
   height: 4px;
-  background-color: #ff1100;
+  background-color: #443939;
   margin: 20px auto 0;
 }
 
@@ -176,7 +176,7 @@ header {
 
 /* BARRA DE CIMA */
 .topbar {
-  background-color: #ff0000;
+  background-color: #020202;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -323,14 +323,14 @@ header {
   bottom: -6px;
   width: 0%;
   height: 4px;
-  background-color: #c40000;
+  background-color: #eb0c0c;
   border-radius: 10px;
   transform: translateX(-50%);
   transition: 0.3s;
 }
 
 .menu a:hover {
-  color: #ff0000;
+  color: #f10707;
 }
 
 .menu a:hover::after {
@@ -342,7 +342,7 @@ header {
 }
 
 .menu .ativo {
-  color: #ff0000;
+  color: #f10b0b;
   font-weight: 700;
 }
 
